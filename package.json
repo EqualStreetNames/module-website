@@ -17,7 +17,6 @@
     "@parcel/transformer-typescript-tsc": "^2.7",
     "@turf/bbox": "^6.5.0",
     "@types/chart.js": "^2.9.37",
-    "@types/mapbox__mapbox-gl-geocoder": "^4.7.3",
     "@types/node": "^18.7.23",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.45.0",
@@ -35,11 +34,11 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "@mapbox/mapbox-gl-geocoder": "^4.7.4",
+    "@maplibre/maplibre-gl-geocoder": "^1.5.0",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.1",
     "chart.js": "^3.9.1",
-    "maplibre-gl": "^1.15.2"
+    "maplibre-gl": "^2.4.0"
   },
   "scripts": {
     "lint": "eslint \"src/script/**/*.ts\"",
