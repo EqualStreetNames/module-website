@@ -1,7 +1,7 @@
 'use strict';
 
-import mapboxgl, { Map, MapboxOptions, NavigationControl, ScaleControl } from 'maplibre-gl';
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import maplibregl, { Map, MapOptions, NavigationControl, ScaleControl } from 'maplibre-gl';
+import MaplibreGeocoder from '@maplibre/maplibre-gl-geocoder';
 
 import addBoundary from './map/layers/boundary';
 import addRelations from './map/layers/relation';
@@ -13,13 +13,15 @@ import { theme } from './theme';
 
 export let map: Map;
 
-mapboxgl.accessToken = process.env.MAPBOX_TOKEN || '';
+const API_KEY = process.env.MAPTILER_APIKEY ?? '';
+const STYLE_LIGHT = `https://api.maptiler.com/maps/basic-v2-light/style.json?key=${API_KEY}`;
+const STYLE_DARK = `https://api.maptiler.com/maps/basic-v2-dark/style.json?key=${API_KEY}`;
 
 export default async function (): Promise<Map> {
-  const options: MapboxOptions = {
+  const options: MapOptions = {
     container: 'map',
     hash: true,
-    style: typeof style !== 'undefined' ? style : (theme === 'dark' ? 'mapbox://styles/mapbox/dark-v10' : 'mapbox://styles/mapbox/light-v10')
+    style: typeof style !== 'undefined' ? style : (theme === 'dark' ? STYLE_DARK : STYLE_LIGHT)
   };
 
   if (typeof center !== 'undefined' && typeof zoom !== 'undefined') {
@@ -43,12 +45,36 @@ export default async function (): Promise<Map> {
   const scale = new ScaleControl({ unit: 'metric' });
   map.addControl(scale);
 
-  const geocoder = new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken,
+  const geocoder = new MaplibreGeocoder({
+    forwardGeocode: async (config) => {
+      const features = [];
+      try {
+        const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${config.query}&format=geojson&polygon_geojson=1&addressdetails=1`);
+        const geojson = await response.json();
+        for (const feature of geojson.features) {
+          features.push({
+            type: 'Feature',
+            geometry: { type: 'Point', coordinates: center },
+            place_name: feature.properties.display_name,
+            properties: feature.properties,
+            text: feature.properties.display_name,
+            place_type: ['place'],
+            center: [feature.bbox[0] + (feature.bbox[2] - feature.bbox[0]) / 2, feature.bbox[1] + (feature.bbox[3] - feature.bbox[1]) / 2]
+          });
+        }
+      } catch (e) {
+        console.error(`Failed to forwardGeocode with error: ${e}`);
+      }
+
+      return {
+        features
+      };
+    }
+  }, {
     bbox: bbox || bounds,
     enableEventLogging: false,
     language: lang,
-    mapboxgl: mapboxgl
+    maplibregl
   });
   map.addControl(geocoder);
 
