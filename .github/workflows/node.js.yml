@@ -17,11 +17,11 @@ jobs:
       matrix:
         node-version: [16.x, 18.x]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           repository: EqualStreetNames/equalstreetnames
           submodules: true
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           path: website
       - name: Use Node.js ${{ matrix.node-version }}
@@ -36,6 +36,6 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: npm ci
       - run: npm run lint
