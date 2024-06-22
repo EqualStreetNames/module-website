@@ -14,3 +14,13 @@ updates:
     schedule:
       interval: monthly
     open-pull-requests-limit: 10
+    groups:
+      babel:
+        dependency-type: development
+        patterns: [ "@babel/*" ]
+      eslint:
+        dependency-type: development
+        patterns: [ "eslint", "eslint-*", "@typescript-eslint/*" ]
+      parcel:
+        dependency-type: development
+        patterns: [ "parcel", "@parcel/*" ]
