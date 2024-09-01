@@ -15,7 +15,7 @@
     "@parcel/transformer-image": "^2.8",
     "@parcel/transformer-sass": "^2.8",
     "@parcel/transformer-typescript-tsc": "^2.8",
-    "@turf/bbox": "^6.5.0",
+    "@turf/bbox": "^7.1.0",
     "@types/chart.js": "^2.9.37",
     "@types/mapbox__mapbox-gl-geocoder": "^4.7.3",
     "@types/node": "^18.14.3",
