@@ -60,6 +60,7 @@
     "build:belgium:rixensart": "node build.js -c belgium/rixensart",
     "build:belgium:roeselare": "node build.js -c belgium/roeselare",
     "build:denmark:copenhagen": "node build.js -c denmark/copenhagen",
+    "build:estonia:narva": "node build.js -c estonia/narva",
     "build:estonia:tallinn": "node build.js -c estonia/tallinn",
     "build:estonia:tartu": "node build.js -c estonia/tartu",
     "build:france:paris": "node build.js -c france/paris",
