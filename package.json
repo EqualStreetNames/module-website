@@ -12,9 +12,9 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
-    "@parcel/transformer-image": "^2.8",
-    "@parcel/transformer-sass": "^2.8",
-    "@parcel/transformer-typescript-tsc": "^2.8",
+    "@parcel/transformer-image": "^2.13",
+    "@parcel/transformer-sass": "^2.13",
+    "@parcel/transformer-typescript-tsc": "^2.13",
     "@turf/bbox": "^6.5.0",
     "@types/chart.js": "^2.9.37",
     "@types/mapbox__mapbox-gl-geocoder": "^4.7.3",
@@ -28,7 +28,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.2.0",
     "events": "^3.3.0",
-    "parcel": "^2.8",
+    "parcel": "^2.13",
     "sass": "^1.77",
     "shelljs": "^0.8.5",
     "typescript": "^5.5"
