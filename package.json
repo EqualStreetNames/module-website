@@ -99,6 +99,7 @@
     "build:south-africa:cape-town": "node build.js -c south-africa/cape-town",
     "build:spain:bilbao": "node build.js -c spain/bilbao",
     "build:spain:madrid": "node build.js -c spain/madrid",
+    "build:spain:malaga": "node build.js -c spain/malaga",
     "build:switzerland:basel": "node build.js -c switzerland/basel",
     "build:switzerland:bern": "node build.js -c switzerland/bern",
     "build:switzerland:lausanne": "node build.js -c switzerland/lausanne",
