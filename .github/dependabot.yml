@@ -20,7 +20,7 @@ updates:
         patterns: [ "@babel/*" ]
       eslint:
         dependency-type: development
-        patterns: [ "eslint", "eslint-*", "@typescript-eslint/*" ]
+        patterns: [ "eslint", "@eslint/*", "@typescript-eslint/*" ]
       parcel:
         dependency-type: development
         patterns: [ "parcel", "@parcel/*" ]
