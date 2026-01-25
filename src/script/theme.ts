@@ -33,7 +33,7 @@ export default function initTheme (): void {
   });
 
   // Update theme when user click on them switch
-  themeSwitch?.addEventListener('click', (event: MouseEvent) => {
+  themeSwitch?.addEventListener('click', () => {
     theme = themeSwitch.checked === true ? 'dark' : 'light';
 
     changeTheme();

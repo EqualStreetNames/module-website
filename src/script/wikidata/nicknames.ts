@@ -19,7 +19,7 @@ export default function (
     return null;
   }
 
-  return typeof (person.nicknames as any)[lang] !== 'undefined'
-    ? (person.nicknames as any)[lang].text
+  return typeof person.nicknames[lang as keyof typeof person.nicknames] !== 'undefined'
+    ? person.nicknames[lang as keyof typeof person.nicknames].value
     : null;
 }
