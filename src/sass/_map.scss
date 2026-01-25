@@ -1,5 +1,5 @@
 @import "../../node_modules/maplibre-gl/dist/maplibre-gl.css";
-@import "../../node_modules/@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
+@import "../../node_modules/@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
 
 #map {
   background-color: #dddddd;
@@ -7,12 +7,12 @@
   width: 100%;
 }
 
-.mapboxgl-ctrl-top-left,
-.mapboxgl-ctrl-top-right {
+.maplibregl-ctrl-top-left,
+.maplibregl-ctrl-top-right {
   top: 60px;
 }
 
-.mapboxgl-ctrl-attrib {
+.maplibregl-ctrl-attrib {
   background-color: var(--bg-color-map-transparant) !important;
   color: var(--text-color-map-transparant) !important;
 
@@ -21,13 +21,13 @@
   }
 }
 
-.mapboxgl-ctrl-scale {
+.maplibregl-ctrl-scale {
   background-color: var(--bg-color-map-transparant) !important;
   color: var(--text-color-map-transparant) !important;
   border-color: var(--border-color-map);
 }
 
-.mapboxgl-ctrl-group {
+.maplibregl-ctrl-group {
   background-color: var(--bg-color-map-solid) !important;
 
   button > span {
@@ -35,7 +35,7 @@
   }
 }
 
-.mapboxgl-ctrl-geocoder {
+.maplibregl-ctrl-geocoder {
   background-color: var(--bg-color-map-solid) !important;
 
   svg {
@@ -60,12 +60,12 @@
   }
 }
 
-.mapboxgl-ctrl-geocoder--suggestion-title,
-.mapboxgl-ctrl-geocoder--suggestion-address {
+.maplibregl-ctrl-geocoder--suggestion-title,
+.maplibregl-ctrl-geocoder--suggestion-address {
   color: var(--text-color-map-transparant) !important;
 }
 
-.mapboxgl-ctrl-geocoder--button {
+.maplibregl-ctrl-geocoder--button {
   // This removes the white background color of the button
   background-color: rgba(0, 0, 0, 0);
 }

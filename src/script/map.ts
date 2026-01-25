@@ -1,25 +1,23 @@
 'use strict';
 
-import mapboxgl, { Map, MapboxOptions, NavigationControl, ScaleControl } from 'maplibre-gl';
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import MaplibreGeocoder from '@maplibre/maplibre-gl-geocoder';
+import maplibregl, { Map, MapOptions, NavigationControl, ScaleControl } from 'maplibre-gl';
 
+import addEvents from './map/events';
 import addBoundary from './map/layers/boundary';
 import addRelations from './map/layers/relation';
 import addWays from './map/layers/ways';
-import addEvents from './map/events';
 
-import { lang, center, zoom, bbox, style, bounds } from './index';
+import { bbox, bounds, center, lang, style, zoom } from './index';
 import { theme } from './theme';
 
 export let map: Map;
 
-mapboxgl.accessToken = process.env.MAPBOX_TOKEN || '';
-
 export default async function (): Promise<Map> {
-  const options: MapboxOptions = {
+  const options: MapOptions = {
     container: 'map',
     hash: true,
-    style: typeof style !== 'undefined' ? style : (theme === 'dark' ? 'mapbox://styles/mapbox/dark-v10' : 'mapbox://styles/mapbox/light-v10')
+    style: typeof style !== 'undefined' ? style : (theme === 'dark' ? 'https://tiles.openfreemap.org/styles/dark' : 'https://tiles.openfreemap.org/styles/positron')
   };
 
   if (typeof center !== 'undefined' && typeof zoom !== 'undefined') {
@@ -43,12 +41,42 @@ export default async function (): Promise<Map> {
   const scale = new ScaleControl({ unit: 'metric' });
   map.addControl(scale);
 
-  const geocoder = new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken,
+  const geocoder = new MaplibreGeocoder({
+    forwardGeocode: async (config) => {
+      const features = [];
+      try {
+        const request = `https://nominatim.openstreetmap.org/search?q=${config.query}&format=geojson&polygon_geojson=1&addressdetails=1`;
+        const response = await fetch(request);
+        const geojson = await response.json();
+        for (const feature of geojson.features) {
+          const center = [
+            feature.bbox[0] + (feature.bbox[2] - feature.bbox[0]) / 2,
+            feature.bbox[1] + (feature.bbox[3] - feature.bbox[1]) / 2
+          ];
+          const point = {
+            type: 'Feature',
+            geometry: { type: 'Point', coordinates: center },
+            place_name: feature.properties.display_name,
+            properties: feature.properties,
+            text: feature.properties.display_name,
+            place_type: ['place'],
+            center
+          };
+          features.push(point);
+        }
+      } catch (e) {
+        throw new Error(`Failed to forwardGeocode with error: ${e}`);
+      }
+
+      return {
+        features
+      };
+    }
+  }, {
     bbox: bbox || bounds,
     enableEventLogging: false,
     language: lang,
-    mapboxgl: mapboxgl
+    maplibregl
   });
   map.addControl(geocoder);
 
