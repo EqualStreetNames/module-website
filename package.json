@@ -12,25 +12,20 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
+    "@eslint/js": "^9.39.2",
     "@parcel/transformer-image": "^2.8",
     "@parcel/transformer-sass": "^2.8",
     "@parcel/transformer-typescript-tsc": "^2.8",
     "@turf/bbox": "^6.5.0",
     "@types/chart.js": "^2.9.37",
-    "@types/node": "^18.14.3",
-    "@typescript-eslint/eslint-plugin": "^7.13.1",
-    "@typescript-eslint/parser": "^7.13.1",
     "commander": "^9.4.1",
-    "eslint": "^8.40.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.2.0",
+    "eslint": "^9.39.2",
     "events": "^3.3.0",
     "parcel": "^2.8",
     "sass": "^1.77",
     "shelljs": "^0.10.0",
-    "typescript": "^5.5"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.53.1"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
@@ -42,6 +37,7 @@
   },
   "scripts": {
     "lint": "eslint \"src/script/**/*.ts\"",
+    "lint:fix": "eslint --fix \"src/script/**/*.ts\"",
     "build:australia:fremantle": "node build.js -c australia/fremantle",
     "build:austria:vienna": "node build.js -c austria/vienna",
     "build:belarus:minsk": "node build.js -c belarus/minsk",

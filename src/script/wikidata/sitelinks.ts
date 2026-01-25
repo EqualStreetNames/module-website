@@ -19,7 +19,7 @@ export default function (
   }
 
   const link =
-    (person.sitelinks as any)[`${lang}wiki`] ??
+    person.sitelinks[`${lang}wiki` as keyof typeof person.sitelinks] ??
     person.sitelinks.enwiki ??
     person.sitelinks.frwiki ??
     person.sitelinks.nlwiki ??

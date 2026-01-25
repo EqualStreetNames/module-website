@@ -1,7 +1,7 @@
 'use strict';
 
-import { Map, MapMouseEvent } from 'maplibre-gl';
+import { Map } from 'maplibre-gl';
 
-export default function (map: Map, event: MapMouseEvent): void {
+export default function (map: Map): void {
   map.getCanvas().style.cursor = 'pointer';
 }
