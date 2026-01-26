@@ -16,7 +16,7 @@
     "@parcel/transformer-image": "^2.8",
     "@parcel/transformer-sass": "^2.8",
     "@parcel/transformer-typescript-tsc": "^2.8",
-    "@turf/bbox": "^6.5.0",
+    "@turf/bbox": "^7.3.2",
     "@types/chart.js": "^2.9.37",
     "commander": "^9.4.1",
     "eslint": "^9.39.2",
