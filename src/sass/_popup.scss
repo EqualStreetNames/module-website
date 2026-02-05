@@ -1,8 +1,8 @@
-.mapboxgl-popup {
+.maplibregl-popup {
   animation: fadein 0.2s;
 }
 
-.mapboxgl-popup-content {
+.maplibregl-popup-content {
   min-width: 200px;
   padding-bottom: 10px;
 
@@ -67,11 +67,11 @@
   }
 }
 
-.mapboxgl-popup-tip {
+.maplibregl-popup-tip {
   border-top-color: var(--bg-color-map-solid) !important;
 }
 
-.mapboxgl-popup-content {
+.maplibregl-popup-content {
   background-color: var(--bg-color-map-solid);
   color: var(--text-color-map-solid);
 
