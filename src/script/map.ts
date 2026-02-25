@@ -28,6 +28,12 @@ export default async function (): Promise<Map> {
     options.fitBoundsOptions = { padding: 50 };
   }
 
+  // Load RTL text plugin for proper Hebrew/Arabic rendering
+  maplibregl.setRTLTextPlugin(
+    'https://unpkg.com/@mapbox/mapbox-gl-rtl-text@0.3.0/dist/mapbox-gl-rtl-text.js',
+    true
+  );
+
   // Initialize map.
   if (typeof map !== 'undefined') {
     map.remove();
