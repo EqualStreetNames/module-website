@@ -33,7 +33,7 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "chart.js": "^3.9.1",
-    "maplibre-gl": "^5.16.0"
+    "maplibre-gl": "^5.20.1"
   },
   "scripts": {
     "lint": "eslint \"src/script/**/*.ts\"",
