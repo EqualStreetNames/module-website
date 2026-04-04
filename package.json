@@ -61,6 +61,7 @@
     "build:france:bayonne": "node build.js -c france/bayonne",
     "build:france:crest": "node build.js -c france/crest",
     "build:france:paris": "node build.js -c france/paris",
+    "build:france:pau": "node build.js -c france/pau",
     "build:france:saint-brieuc": "node build.js -c france/saint-brieuc",
     "build:germany:berlin": "node build.js -c germany/berlin",
     "build:germany:brandenburg-an-der-havel": "node build.js -c germany/brandenburg-an-der-havel",
