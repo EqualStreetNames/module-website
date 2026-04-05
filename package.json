@@ -60,6 +60,7 @@
     "build:estonia:tartu": "node build.js -c estonia/tartu",
     "build:france:bayonne": "node build.js -c france/bayonne",
     "build:france:crest": "node build.js -c france/crest",
+    "build:france:nantes": "node build.js -c france/nantes",
     "build:france:paris": "node build.js -c france/paris",
     "build:france:pau": "node build.js -c france/pau",
     "build:france:saint-brieuc": "node build.js -c france/saint-brieuc",
