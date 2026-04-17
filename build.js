@@ -1,11 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const shell = require('shelljs');
-const program = require('commander');
-const turfBBox = require('@turf/bbox');
+const { program } = require('commander');
+const { bbox } = require('@turf/bbox');
 const turfHelpers = require('@turf/helpers');
-
-const bbox = turfBBox.default; // @see https://github.com/Turfjs/turf/issues/1932
 
 const version = require('./package.json').version;
 

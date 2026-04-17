@@ -70,8 +70,8 @@ export default async function (): Promise<Map> {
           };
           features.push(point);
         }
-      } catch (e) {
-        throw new Error(`Failed to forwardGeocode with error: ${e}`);
+      } catch (error) {
+        throw new Error(`Failed to forwardGeocode with error: ${error}`, { cause: error });
       }
 
       return {
