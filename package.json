@@ -14,7 +14,6 @@
     "@babel/preset-env": "^7.29.2",
     "@eslint/css": "^1.1.0",
     "@eslint/js": "^10.0.1",
-    "@eslint/json": "^1.2.0",
     "@parcel/transformer-image": "^2.16",
     "@parcel/transformer-sass": "^2.16",
     "@parcel/transformer-typescript-tsc": "^2.16",
@@ -38,8 +37,8 @@
     "maplibre-gl": "^5.23.0"
   },
   "scripts": {
-    "eslint": "eslint src/ static/",
-    "eslint:fix": "eslint --fix src/ static/",
+    "eslint": "eslint src/",
+    "eslint:fix": "eslint --fix src/",
     "build:australia:fremantle": "node build.js -c australia/fremantle",
     "build:austria:vienna": "node build.js -c austria/vienna",
     "build:belarus:minsk": "node build.js -c belarus/minsk",
