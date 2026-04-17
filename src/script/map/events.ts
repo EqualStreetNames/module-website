@@ -23,10 +23,10 @@ export default function (map: Map): void {
   });
 
   // Change the cursor to a pointer when the mouse is over a layer.
-  map.on('mouseenter', 'layer-relations', event => onMouseEnter(map, event));
-  map.on('mouseenter', 'layer-ways', event => onMouseEnter(map, event));
+  map.on('mouseenter', 'layer-relations', () => onMouseEnter(map));
+  map.on('mouseenter', 'layer-ways', () => onMouseEnter(map));
 
   // Change it back to a pointer when it leaves.
-  map.on('mouseleave', 'layer-relations', event => onMouseLeave(map, event));
-  map.on('mouseleave', 'layer-ways', event => onMouseLeave(map, event));
+  map.on('mouseleave', 'layer-relations', () => onMouseLeave(map));
+  map.on('mouseleave', 'layer-ways', () => onMouseLeave(map));
 }
