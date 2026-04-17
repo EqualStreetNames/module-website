@@ -28,7 +28,9 @@ async function bundle (options) {
   if (shell.test('-e', directory) === true) {
     shell.rm('-rf', ['assets', 'dist', 'public', 'static', outDir]);
 
-    shell.mkdir('assets', 'public', 'static');
+    shell.mkdir('assets');
+    shell.mkdir('public');
+    shell.mkdir('static');
     shell.mkdir('-p', outDir);
 
     shell.cp(path.join(directory, 'assets', '*'), 'assets');
