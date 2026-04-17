@@ -26,7 +26,7 @@ async function bundle (options) {
   const outDir = path.join(__dirname, 'dist', city);
 
   if (shell.test('-e', directory) === true) {
-    shell.rm('-rf', ['assets', 'dist', 'public', 'static', outDir]);
+    shell.rm('-rf', 'assets', 'dist', 'public', 'static', outDir);
 
     shell.mkdir('assets');
     shell.mkdir('public');
