@@ -71,7 +71,7 @@
     "build:germany:frankfurt-am-main": "node build.cjs -c germany/frankfurt-am-main",
     "build:germany:freiburg-im-breisgau": "node build.cjs -c germany/freiburg-im-breisgau",
     "build:germany:freising": "node build.cjs -c germany/freising",
-    "build:germany:fuerth": "node build.js -c germany/fuerth",
+    "build:germany:fuerth": "node build.cjs -c germany/fuerth",
     "build:germany:halle-saale": "node build.cjs -c germany/halle-saale",
     "build:germany:hannover": "node build.cjs -c germany/hannover",
     "build:germany:kaiserslautern": "node build.cjs -c germany/kaiserslautern",
