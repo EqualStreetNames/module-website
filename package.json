@@ -34,7 +34,7 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
     "chart.js": "^4.5.1",
-    "maplibre-gl": "^5.23.0"
+    "maplibre-gl": "^5.24.0"
   },
   "scripts": {
     "eslint": "eslint src/",
