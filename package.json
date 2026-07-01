@@ -23,7 +23,7 @@
     "events": "^3.3.0",
     "globals": "^17.7.0",
     "parcel": "^2.16",
-    "sass": "^1.100",
+    "sass": "^1.101",
     "shelljs": "^0.10.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.60.1"
