@@ -14,8 +14,8 @@ updates:
     schedule:
       interval: monthly
     ignore:
-      update-types:
-        - version-update:semver-major
+      - update-types:
+          - version-update:semver-major
     groups:
       production:
         dependency-type: production
