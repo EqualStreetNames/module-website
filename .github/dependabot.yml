@@ -13,14 +13,14 @@ updates:
     directory: "/"
     schedule:
       interval: monthly
-    open-pull-requests-limit: 10
     groups:
-      babel:
+      production:
+        dependency-type: production
+        update-types: 
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"
+      development:
         dependency-type: development
-        patterns: [ "@babel/*" ]
-      eslint:
-        dependency-type: development
-        patterns: [ "eslint", "@eslint/*", "@typescript-eslint/*" ]
-      parcel:
-        dependency-type: development
-        patterns: [ "parcel", "@parcel/*" ]
+        update-types: 
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"
