@@ -19,14 +19,14 @@
     "@parcel/transformer-typescript-tsc": "^2.16",
     "@turf/bbox": "^7.4.0",
     "commander": "^14.0.3",
-    "eslint": "^10.8.0",
+    "eslint": "^10.9.1",
     "events": "^3.3.0",
-    "globals": "^17.9.0",
+    "globals": "^17.11.0",
     "parcel": "^2.16",
-    "sass": "^1.102",
+    "sass": "^1.103",
     "shelljs": "^0.10.0",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.66.0"
+    "typescript-eslint": "^8.68.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
