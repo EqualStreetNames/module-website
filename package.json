@@ -94,6 +94,7 @@
     "build:poland:warsaw": "node build.cjs -c poland/warsaw",
     "build:poland:wroclaw": "node build.cjs -c poland/wroclaw",
     "build:portugal:lisbon": "node build.cjs -c portugal/lisbon",
+    "build:portugal:porto": "node build.cjs -c portugal/porto",
     "build:romania:bucharest": "node build.cjs -c romania/bucharest",
     "build:serbia:belgrade": "node build.cjs -c serbia/belgrade",
     "build:slovakia:bratislava": "node build.cjs -c slovakia/bratislava",
