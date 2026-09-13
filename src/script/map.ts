@@ -1,7 +1,8 @@
 'use strict';
 
 import MaplibreGeocoder from '@maplibre/maplibre-gl-geocoder';
-import maplibregl, { Map, MapOptions, NavigationControl, ScaleControl } from 'maplibre-gl';
+import * as maplibregl from 'maplibre-gl';
+import { Map, MapOptions, NavigationControl, ScaleControl, setWorkerUrl } from 'maplibre-gl';
 
 import addEvents from './map/events';
 import addBoundary from './map/layers/boundary';
@@ -10,6 +11,8 @@ import addWays from './map/layers/ways';
 
 import { bbox, bounds, center, lang, style, zoom } from './index';
 import { theme } from './theme';
+
+setWorkerUrl(new URL('../../node_modules/maplibre-gl/dist/maplibre-gl-worker.mjs', import.meta.url).toString());
 
 export let map: Map;
 
@@ -27,12 +30,6 @@ export default async function (): Promise<Map> {
     options.bounds = bbox || bounds;
     options.fitBoundsOptions = { padding: 50 };
   }
-
-  // Load RTL text plugin for proper Hebrew/Arabic rendering
-  maplibregl.setRTLTextPlugin(
-    'https://unpkg.com/@mapbox/mapbox-gl-rtl-text@0.3.0/dist/mapbox-gl-rtl-text.js',
-    true
-  );
 
   // Initialize map.
   if (typeof map !== 'undefined') {

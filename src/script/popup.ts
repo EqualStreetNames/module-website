@@ -1,6 +1,6 @@
 'use strict';
 
-import { MapboxGeoJSONFeature } from 'maplibre-gl';
+import { MapGeoJSONFeature } from 'maplibre-gl';
 
 import getGender from './wikidata/gender';
 import getName from './wikidata/labels';
@@ -23,13 +23,13 @@ interface Property {
   details?: string;
 }
 
-export default function (feature: MapboxGeoJSONFeature): string {
+export default function (feature: MapGeoJSONFeature): string {
   const properties = feature.properties as Property;
 
   const streetname = getStreetname(properties);
   const details =
     typeof properties.details !== 'undefined' && properties.details !== null
-      ? JSON.parse(properties.details)
+      ? properties.details
       : null;
 
   const source = feature.source;
@@ -144,8 +144,7 @@ function popupDetails (
 }
 
 function getStreetname (properties: { name: string }): string {
-  // Bug in MapboxGL (see https://github.com/mapbox/mapbox-gl-js/issues/8497)
-  if (properties.name === null || properties.name === 'null') {
+  if (properties.name === null) {
     return '';
   }
 
